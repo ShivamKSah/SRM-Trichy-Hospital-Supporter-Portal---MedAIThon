@@ -1,0 +1,22 @@
+/* Minimal site stylesheet to avoid missing /index.css at runtime.
+   Tailwind is loaded via CDN in index.html; this file provides small layout defaults
+   and will be included in the build so Vercel doesn't log a missing asset.
+*/
+:root {
+  --srm-bg: #F0F7F7;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: var(--srm-bg);
+}
+
+/* Basic anchor and image defaults */
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Ensure the app root uses full height and no overflow issues */
+#root { min-height: 100vh; }
