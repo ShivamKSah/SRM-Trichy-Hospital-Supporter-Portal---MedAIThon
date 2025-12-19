@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -35,7 +35,8 @@
         },
       }
     </script>
-
+
+
   <script type="importmap">
 {
   "imports": {
@@ -47,10 +48,42 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/SRM-Trichy-Hospital-Supporter-Portal---MedAIThon/assets/index-BOfxGt6N.js"></script>
+  <script>
+(function(){
+  function ensureOverlay(){
+    var el=document.getElementById('deploy-error-overlay');
+    if(!el){el=document.createElement('div');el.id='deploy-error-overlay';el.style.cssText='position:fixed;left:0;right:0;top:0;bottom:0;background:#fff;color:#111;z-index:2147483647;padding:16px;overflow:auto;font-family:monospace;font-size:13px;white-space:pre-wrap;';document.body.appendChild(el);}return el;
+  }
+  function report(msg){try{var el=ensureOverlay();el.innerText = (el.innerText?el.innerText + '\n\n':'') + msg;}catch(e){}}
+  window.addEventListener('error', function(e){try{var msg='Error: ' + (e && e.message ? e.message : String(e)); msg += '\nAt: ' + (e.filename||'') + ':' + (e.lineno||'') + ':' + (e.colno||''); report(msg);}catch(ex){} });
+  window.addEventListener('unhandledrejection', function(e){try{var r=e && e.reason?e.reason:(e||''); var msg='Unhandled Rejection: ' + (r && r.stack? r.stack : String(r)); report(msg);}catch(ex){} });
+  window.__reportDeployError = function(m){report(String(m))};
+  // If DOM already ready, ensure overlay exists with a starting message
+  if(document.readyState==='complete' || document.readyState==='interactive'){try{var el=ensureOverlay();el.innerText='(runtime error overlay active)';}catch(e){} }
+})();
+</script>
+
+<script>
+(function(){
+  function ensureOverlay(){
+    var el=document.getElementById('deploy-error-overlay');
+    if(!el){el=document.createElement('div');el.id='deploy-error-overlay';el.style.cssText='position:fixed;left:0;right:0;top:0;bottom:0;background:#fff;color:#111;z-index:2147483647;padding:16px;overflow:auto;font-family:monospace;font-size:13px;white-space:pre-wrap;';document.body.appendChild(el);}return el;
+  }
+  function report(msg){try{var el=ensureOverlay();el.innerText = (el.innerText?el.innerText + '\n\n':'') + msg;}catch(e){}}
+  window.addEventListener('error', function(e){try{var msg='Error: ' + (e && e.message ? e.message : String(e)); msg += '\nAt: ' + (e.filename||'') + ':' + (e.lineno||'') + ':' + (e.colno||''); report(msg);}catch(ex){} });
+  window.addEventListener('unhandledrejection', function(e){try{var r=e && e.reason?e.reason:(e||''); var msg='Unhandled Rejection: ' + (r && r.stack? r.stack : String(r)); report(msg);}catch(ex){} });
+  window.__reportDeployError = function(m){report(String(m))};
+  if(document.readyState==='complete' || document.readyState==='interactive'){try{var el=ensureOverlay();el.innerText='(runtime error overlay active)';}catch(e){} }
+})();
+</script>
+
+<script type="module" crossorigin src="/SRM-Trichy-Hospital-Supporter-Portal---MedAIThon/assets/index-BOfxGt6N.js"></script>
   <link rel="stylesheet" crossorigin href="/SRM-Trichy-Hospital-Supporter-Portal---MedAIThon/assets/index-VK8Y2km9.css">
 </head>
   <body class="bg-srm-bg-body">
-    <div id="root"></div>
+    <div id="root"></div>
+
   </body>
 </html>
+
+
